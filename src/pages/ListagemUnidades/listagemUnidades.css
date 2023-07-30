@@ -1,0 +1,57 @@
+.listagem-unidades-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .listagem-unidades-link {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    background-color: #3437dd;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .listagem-unidades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .listagem-unidades-table th,
+  .listagem-unidades-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .listagem-unidades-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .listagem-unidades-table td {
+    text-align: center;
+  }
+  
+  .listagem-unidades-table a {
+    margin-right: 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .listagem-unidades-table button {
+    background-color: #df0000;
+    color: white;
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .listagem-unidades-table button:hover {
+    background-color: #c82333;
+  }
+  

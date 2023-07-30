@@ -7,8 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [email, setEmail] = useState("teste@gmail.com");
+  const [senha, setSenha] = useState("123");
 
   const navegar = useNavigate();
 
@@ -22,7 +22,7 @@ const Login = () => {
       return;
     }
   
-    fetch("http://localhost:3000/login")
+    fetch("http://localhost:3000/usuarios")
       .then((response) => response.json())
       .then((data) => {
         const usuario = data.find((usuario) => usuario.email === email && usuario.senha === senha);
@@ -41,40 +41,37 @@ const Login = () => {
   };
   
   return (
-    <>
-      <section>
-        <div className="loginContainer">
-          <div className="loginTitulo">
-            <h1>Seja bem vindo!</h1>
-            <p>Digite os seus dados de acesso:</p>
+    <div className="login-container">
+      <div className="login-card">
+        <h1 className="login-title">Seja bem-vindo!</h1>
+        <p className="login-subtitle">Digite os seus dados de acesso:</p>
+
+        <form className="login-form">
+          <Input
+            etiqueta="Email"
+            id="email"
+            aoMudar={(e) => setEmail(e.target.value)}
+            tipo="text"
+            valor={email}
+          />
+          <Input
+            etiqueta="Senha"
+            id="senha"
+            aoMudar={(e) => setSenha(e.target.value)}
+            tipo="password"
+            valor={senha}
+          />
+
+          <div className="login-button">
+            <Botao
+              aoClicar={confirmarLogin}
+              tipo="button"
+              enviar="Entrar"
+              cor="primary"
+            />
           </div>
-
-          <form>
-            <Input
-              etiqueta="Email"
-              id="email"
-              aoMudar={(e) => setEmail(e.target.value)}
-              tipo="text"
-            />
-            <Input
-              etiqueta="Senha"
-              id="senha"
-              aoMudar={(e) => setSenha(e.target.value)}
-              tipo="password"
-            />
-
-            <div className="loginBotao">
-              <Botao
-                aoClicar={confirmarLogin}
-                tipo="button"
-                enviar="Entrar"
-                cor="green"
-              />
-            </div>
-          </form>
-        </div>
-      </section>
-
+        </form>
+      </div>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -87,7 +84,7 @@ const Login = () => {
         pauseOnHover
         theme="dark"
       />
-    </>
+    </div>
   );
 };
 
