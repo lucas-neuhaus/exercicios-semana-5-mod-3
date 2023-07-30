@@ -1,0 +1,30 @@
+
+.dashboard-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .dashboard-stat {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .dashboard-stat h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-stat p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

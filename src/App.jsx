@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import ListagemUnidades from "./pages/ListagemUnidades";
+import EditarUnidades from "./pages/EditarUnidades";
+import CadastroUnidades from "./pages/CadastroUnidades";
+import GeracaoMensal from "./pages/GeracaoMensal";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <div className="sidebar">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+              <li>
+                <Link to="/unidades">Unidade Consumidora</Link>
+              </li>
+              <li>
+                <Link to="/geracoes/nova">Cadastro de energia gerada</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/unidades" element={<ListagemUnidades />} />
+            <Route path="/unidades/nova" element={<CadastroUnidades />} />
+            <Route path="/unidades/editar/:id" element={<EditarUnidades />} />
+            <Route path="/geracoes/nova" element={<GeracaoMensal />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
+
+
+
+
+
+
+

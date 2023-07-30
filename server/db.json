@@ -1,0 +1,19 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "teste@gmail.com",
+      "senha": "123"
+    }
+  ],
+  "unidades": [
+    {
+      "apelido": "Painel 2",
+      "local": "Rua Rua Rua",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "status": true,
+      "id": 4
+    }
+  ]
+}

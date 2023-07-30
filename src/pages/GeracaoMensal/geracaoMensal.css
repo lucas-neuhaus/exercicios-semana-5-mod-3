@@ -1,0 +1,16 @@
+
+.geracao-mensal-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .geracao-mensal-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .geracao-mensal-form > * {
+    margin-bottom: 10px;
+  }
+  

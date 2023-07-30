@@ -1,0 +1,31 @@
+/* cadastrarProduto.css */
+
+.CadastrarProduto {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .CadastrarProduto__titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .CadastrarProduto__conteudo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .CadastrarProduto__conteudo > * {
+    margin-bottom: 10px;
+  }
+  
+  .CadastrarProduto__checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .CadastrarProduto__checkbox input {
+    margin-right: 5px;
+  }
+  
